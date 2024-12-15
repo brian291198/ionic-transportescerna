@@ -1,20 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="bg-darkRed flex items-center justify-center h-screen">
+    <div class="text-center w-full max-w-xs flex flex-col justify-between h-full">
+      <!-- Imagen del logo en la parte superior -->
+      <div class="mt-32">
+        <img src="../../assets/img/logo-cerna.jpg" alt="Logo Cerna S.R.L" class="w-60 mx-auto">
+      </div>
+  
+      <!-- Botones en la parte inferior -->
+      <div class="mb-20">
+        <button [routerLink]="['/login']" style="border:solid 1px !important" class="bg-white text-darkRed font-semibold py-2 px-4 rounded-full w-full mb-4 active:border-2 active:border-pureWhite active:bg-darkRed active:text-white">Iniciar Sesión</button>
+        <button [routerLink]="['/register']" style="border:solid 1px !important" class="border border-white text-white font-semibold py-2 px-4 rounded-full w-full  active:bg-pureWhite active:text-darkRed">Registrarse</button>
+      </div>
+    </div>
   </div>
 </ion-content>
