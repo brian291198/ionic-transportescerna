@@ -30,7 +30,6 @@ export class Header1Component  implements OnInit {
   NavegarHistory(){
     this.router.navigate(['/history']) 
   }
-<<<<<<< Updated upstream
 
   NavegarPromocion(){
     this.router.navigate(['/promociones']) 
@@ -48,9 +47,7 @@ export class Header1Component  implements OnInit {
     this.router.navigate(['/perfil']) 
   }
 
-=======
   NavegarCotizacion(){
     this.router.navigate(['/cotizacion']) 
   }
->>>>>>> Stashed changes
 }
