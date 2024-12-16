@@ -1,76 +1,116 @@
+
 <ion-content [fullscreen]="true">
 
+  
   <div class="bg-darkRed h-screen flex flex-col items-center justify-between">
 
-    <!-- Componente header2 reutilizado -->
-    <div class="w-full">
-      <app-header2></app-header2>
+    <!-- Botón regresar -->
+    <div class="w-full pt-6 px-6">
+      <button type="button" [routerLink]="['/welcome']">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+        </svg>
+      </button>
     </div>
 
     <!-- Parte superior -->
-    <div class="text-start px-10 w-full flex items-center relative">
-      <!-- Título principal -->
-      <div class="w-full text-center">
+    <div class="text-start px-10 w-full flex items-center">
+      
+      <div class="w-3/4">
         <h2 class="text-2xl font-bold text-pureWhite">Perfil</h2>
+        <p class="text-pureWhite">Actualice su información</p>
       </div>
-      <!-- Botón regresar -->
-      <div class="w-full px-6 absolute top-1 left-0">
-        <button type="button" [routerLink]="['/welcome']">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-          </svg>
-        </button>
+      <div class="w-1/4 flex justify-end">
+        <img src="../../assets/img/logo-cerna.jpg" alt="Logo Cerna S.R.L" class="w-24">
       </div>
+     
     </div>
 
     <!-- Parte inferior -->
     <div class="bg-white rounded-tl-3xl rounded-tr-3xl shadow-lg w-full h-3/4 px-10 overflow-y-auto">
+      
+      <form class="h-full">
+        <div class="flex flex-col h-full gap-5 pt-10">
+          <div>
+          <!-- Campo para ingresar DNI/RUC -->
+          <div class="mb-4 mb-5">
+            <label class="block text-darkBlue font-semibold mb-2">DNI / RUC</label>
+            <div class="relative">
+              <input type="text" placeholder="Número de Identidad" class="border border-lightGray bg-lightGray rounded-full w-full py-2 pl-10 pr-4 text-darkBlue focus:outline-none" disabled value="1234567890">
+              <i class="absolute left-3 top-2 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-darkBlue">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Zm6-10.125a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0Zm1.294 6.336a6.721 6.721 0 0 1-3.17.789 6.721 6.721 0 0 1-3.168-.789 3.376 3.376 0 0 1 6.338 0Z" />
+                </svg>                
+              </i>
+            </div>
+          </div>
+          <!-- Campo para ingresar Email -->
+          <div class="mb-4 mb-5">
+            <label class="block text-darkBlue font-semibold mb-2">Email</label>
+            <div class="relative">
+              <input type="email" placeholder="example@gmail.com" class="border border-lightGray bg-lightGray rounded-full w-full py-2 pl-10 pr-4 text-darkBlue focus:outline-none" value="alejandro_g001@gmail.com">
+              <i class="absolute left-3 top-2 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-darkBlue">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                </svg>
+                
+              </i>
+            </div>
+          </div>
+          <!-- Campo para ingresar usuario -->
+          <div class="mb-4 mb-5">
+            <label class="block text-darkBlue font-semibold mb-2">Usuario</label>
+            <div class="relative">
+              <input type="text" placeholder="Nombre de usuario" class="border border-lightGray bg-lightGray rounded-full w-full py-2 pl-10 pr-4 text-darkBlue focus:outline-none" value="alejandro_g001">
+              <i class="absolute left-3 top-2 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-darkBlue">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+              </i>
+            </div>
+          </div>
+          <!-- Campo para ingresar contraseña -->
+          <div class="mb-6">
+            <label class="block text-darkBlue font-semibold mb-2">Contraseña</label>
+            <div class="relative">
+              <input type="password" placeholder="•••••••••" class="border border-lightGray bg-lightGray rounded-full w-full py-2 pl-10 pr-4 text-darkBlue focus:outline-none" value=".................">
+              <i class="absolute left-3 top-2 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-darkBlue">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                </svg>
+              </i>
+              <button type="button" class="absolute right-3 top-2 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-darkBlue">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- Campo para confirmar contraseña -->
+          <div class="mb-6">
+            <label class="block text-darkBlue font-semibold mb-2">Confirmar Contraseña</label>
+            <div class="relative">
+              <input type="password" placeholder="•••••••••" class="border border-lightGray bg-lightGray rounded-full w-full py-2 pl-10 pr-4 text-darkBlue focus:outline-none" value=".................">
+              <i class="absolute left-3 top-2 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-darkBlue">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                </svg>
+              </i>
+              <button type="button" class="absolute right-3 top-2 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-darkBlue">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          </div>
+          <!-- Botones -->
+          <div class="pb-10">
+            <button [routerLink]="['/welcome']" style="border:solid 1px !important" class="border border-darkRed bg-darkRed text-white font-semibold py-2 px-4 rounded-full w-full mb-4 active:border-2 active:border-darkRed active:bg-white active:text-darkRed">Actualizar</button>
 
-      <!-- Card para el formulario -->
-      <ion-card class="p-6 bg-white shadow-md rounded-lg">
-        <form>
-          <!-- DNI / RUC -->
-          <ion-label class="text-white mb-2 block">DNI/RUC</ion-label>
-          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
-            <ion-icon name="id-card" slot="start" class="text-teal-500"></ion-icon>
-            <ion-input type="text" value="54672345" placeholder="DNI / RUC" readonly class="text-white placeholder-white"></ion-input>
-          </ion-item>
-
-          <!-- Email -->
-          <ion-label class="text-white mb-2 block">EMAIL</ion-label>
-          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
-            <ion-icon name="mail" slot="start" class="text-teal-500"></ion-icon>
-            <ion-input type="email" value="alejandro_g001@gmail.com" placeholder="Email" class="text-white placeholder-white"></ion-input>
-          </ion-item>
-
-          <!-- Usuario -->
-          <ion-label class="text-white mb-2 block">USUARIO</ion-label>
-          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
-            <ion-icon name="person" slot="start" class="text-teal-500"></ion-icon>
-            <ion-input type="text" value="alejandro_g001" placeholder="Usuario" class="text-white placeholder-white"></ion-input>
-          </ion-item>
-
-          <!-- Contraseña -->
-          <ion-label class="text-white mb-2 block">CONTRASEÑA</ion-label>
-          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
-            <ion-icon name="lock-closed" slot="start" class="text-teal-500"></ion-icon>
-            <ion-input type="password" value="********" placeholder="Contraseña" class="text-white placeholder-white"></ion-input>
-            <ion-icon name="eye-off" slot="end" class="text-teal-500"></ion-icon>
-          </ion-item>
-
-          <!-- Confirmar Contraseña -->
-          <ion-label class="text-white mb-2 block">CONFIRMAR CONTRASEÑA</ion-label>
-          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
-            <ion-icon name="lock-closed" slot="start" class="text-teal-500"></ion-icon>
-            <ion-input type="password" value="********" placeholder="Confirmar Contraseña" class="text-white placeholder-white"></ion-input>
-            <ion-icon name="eye-off" slot="end" class="text-teal-500"></ion-icon>
-          </ion-item>
-
-          <!-- Botón Actualizar -->
-          <ion-button expand="full" color="danger" class="mt-4 rounded-lg">Actualizar</ion-button>
-        </form>
-      </ion-card>
-
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 

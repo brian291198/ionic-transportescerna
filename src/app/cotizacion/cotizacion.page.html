@@ -36,14 +36,15 @@
           </div>
           <div class="mt-4 flex justify-between w-full">
             <label class="flex items-center space-x-2 text-[#014E60] font-roboto">
-              <input type="checkbox" [(ngModel)]="isSobre" (change)="onTipoChange('sobre')" />
+              <input type="radio" name="tipoEnvio" (change)="seleccionarTipo('sobre')" />
               <span>Sobre</span>
             </label>
             <label class="flex items-center space-x-2 text-[#014E60] font-roboto">
-              <input type="checkbox" [(ngModel)]="isPaquete" (change)="onTipoChange('paquete')" />
+              <input type="radio" name="tipoEnvio" (change)="seleccionarTipo('paquete')" />
               <span>Paquete</span>
             </label>
           </div>
+          
           
           
         </div>
@@ -58,7 +59,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 24 24" fill="none" class="mr-2">
               <path d="M19 0H5C3.895 0 3 0.895 3 2V22C3 23.105 3.895 24 5 24H19C20.105 24 21 23.105 21 22V2C21 0.895 20.105 0 19 0ZM19 2V22H5V2H19ZM6 4H18V6H6V4ZM6 8H18V10H6V8ZM6 12H18V14H6V12ZM6 16H18V18H6V16ZM6 20H18V22H6V20Z" fill="#014E60"/>
             </svg>
-            <input type="number" placeholder="Ancho" id="ancho"class="w-full bg-transparent focus:outline-none" />
+            <input type="number" [(ngModel)]="ancho" placeholder="Ancho" class="w-full bg-transparent focus:outline-none" [disabled]="!tipoSeleccionado" />
           </div>
 
           <!-- Input Largo -->
@@ -67,16 +68,16 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mr-2">
               <path d="M2 10L8 4V7H12V4L18 10H14V13H6V10H2Z" fill="#014E60"/>
             </svg>
-            <input type="number" placeholder="Largo" id="largo" class="w-full bg-transparent focus:outline-none " />
+            <input type="number"  [(ngModel)]="largo" placeholder="Largo" class="w-full bg-transparent focus:outline-none "[disabled]="!tipoSeleccionado" />
           </div>
 
           <!-- Input Grosor (solo si es paquete) -->
-          <div *ngIf="isPaquete" class="flex items-center rounded-[15px] px-3 py-2 bg-lightGray">
+          <div *ngIf="tipoSeleccionado === 'paquete'" class="flex items-center rounded-[15px] px-3 py-2 bg-lightGray">
             <!-- Ícono de línea gruesa para Grosor -->
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="mr-2">
               <path d="M4 12H20V14H4V12Z" fill="#014E60"/>
             </svg>
-            <input type="number" placeholder="Grosor" id="grosor"class="w-full bg-transparent focus:outline-none" />
+            <input type="number" [(ngModel)]="grosor" placeholder="Grosor" class="w-full bg-transparent focus:outline-none"[disabled]="!tipoSeleccionado" />
           </div>
 
           <!-- Input Peso -->
@@ -85,7 +86,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="mr-2">
               <path d="M12 3C9.794 3 8 4.794 8 7C8 9.206 9.794 11 12 11C14.206 11 16 9.206 16 7C16 4.794 14.206 3 12 3ZM12 5C13.104 5 14 5.896 14 7C14 8.104 13.104 9 12 9C10.896 9 10 8.104 10 7C10 5.896 10.896 5 12 5ZM11 14V13H13V14H11ZM11 16H13V18H11V16ZM6 20H18V19H6V20ZM18 5C19.104 5 20 5.896 20 7C20 8.104 19.104 9 18 9C16.896 9 16 8.104 16 7C16 5.896 16.896 5 18 5ZM6 5C7.104 5 8 5.896 8 7C8 8.104 7.104 9 6 9C4.896 9 4 8.104 4 7C4 5.896 4.896 5 6 5Z" fill="#014E60"/>
             </svg>
-            <input type="number" placeholder="Peso" id="peso"class="w-full bg-transparent focus:outline-none" />
+            <input type="number" [(ngModel)]="peso" placeholder="Peso" class="w-full bg-transparent focus:outline-none" [disabled]="!tipoSeleccionado"/>
           </div>
 
         </div>
@@ -93,7 +94,7 @@
 
         <!-- Botón Cotizar -->
         <div class="mt-6 flex justify-center">
-          <button id="calcularBtn" class="bg-darkRed text-white font-bold px-10 py-2 rounded-lg shadow-lg flex items-center">
+          <button (click)="calcularCosto()" class="bg-darkRed text-white font-bold px-10 py-2 rounded-lg shadow-lg flex items-center">
             <!-- Ícono con margen a la derecha -->
             <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
               <path d="M0 2.99319V13.4812C0 14.0906 0.394531 14.6661 1.05469 14.8794C4.45312 15.9797 7.85156 15.2281 11.25 14.4765C14.3672 13.7893 17.4844 13.0987 20.5977 13.8367C21.4961 14.05 22.5 13.5151 22.5 12.706V2.21455C22.5 1.60517 22.1055 1.02965 21.4453 0.816369C18.0469 -0.277121 14.6484 0.474442 11.25 1.226C8.13281 1.91324 5.01562 2.60048 1.90234 1.86246C1 1.64918 0 2.18408 0 2.99319ZM5 13.2679H2.5V11.1013C3.87891 11.1013 5 12.0729 5 13.2679ZM2.5 6.76793V4.60126H5C5 5.79632 3.87891 6.76793 2.5 6.76793ZM17.5 11.1013C17.5 9.90621 18.6211 8.9346 20 8.9346V11.1013H17.5ZM20 4.60126C18.6211 4.60126 17.5 3.62965 17.5 2.4346H20V4.60126ZM15 7.85126C15 9.94684 13.3203 11.6429 11.25 11.6429C9.17969 11.6429 7.5 9.94684 7.5 7.85126C7.5 5.75569 9.17969 4.0596 11.25 4.0596C13.3203 4.0596 15 5.75569 15 7.85126ZM9.84375 6.22626C9.84375 6.55465 10.1133 6.82548 10.4688 6.88981V8.52835H10.3125C9.88281 8.52835 9.53125 8.83304 9.53125 9.20543C9.53125 9.57783 9.88281 9.88251 10.3125 9.88251H11.25H12.1875C12.6172 9.88251 12.9688 9.57783 12.9688 9.20543C12.9688 8.83304 12.6172 8.52835 12.1875 8.52835H12.0312V6.22626C12.0312 5.85387 11.6797 5.54918 11.25 5.54918H10.625C10.1953 5.54918 9.84375 5.85387 9.84375 6.22626Z" fill="white"/>
@@ -107,38 +108,13 @@
 
         <!-- Costo Total -->
         <div class="mt-4 text-center">
-          <div id="costoResultado" class="mt-4 text-center text-danger fw-bold d-none">
-            Costo Estimado: <span id="costo">S/ 0.00</span>
-        </div>
+          <p class="text-color">El costo estimado para su envío es: {{ costo | currency:'S/' }}</p>
+          
         </div>
       </div>
     </div>
   </div>
 </ion-content>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-     
 
-      calcularBtn.addEventListener('click', () => {
-          const peso = parseFloat(document.getElementById('peso').value) || 0;
-          const ancho = parseFloat(document.getElementById('ancho').value) || 0;
-          const largo = parseFloat(document.getElementById('largo').value) || 0;
-          const grosor = parseFloat(document.getElementById('grosor').value) || 0;
 
-          let volumen = 0;
-          let costoBase = 0;
 
-          if (tipoEncomienda === "sobre") {
-              volumen = ancho * largo;
-              costoBase = 5;
-          } else if (tipoEncomienda === "paquete") {
-              volumen = ancho * largo * grosor;
-              costoBase = 10;
-          }
-
-          const costoFinal = costoBase + peso * 2 + volumen * 0.01;
-          costoSpan.textContent = `S/ ${costoFinal.toFixed(2)}`;
-          costoResultado.classList.remove('d-none');
-      });
-  });
-</script>
