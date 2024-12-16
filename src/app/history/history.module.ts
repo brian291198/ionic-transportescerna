@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     IonicModule,
     HistoryPageRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   declarations: [HistoryPage]
 })

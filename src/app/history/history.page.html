@@ -23,11 +23,43 @@
         </button>
       </div>
     </div>
+  
 
     <!-- Parte inferior -->
     <div class="bg-white rounded-tl-3xl rounded-tr-3xl shadow-lg w-full h-3/4 px-10 overflow-y-auto">
       
-     <!-- AQUÍ EL CONTENIDO DE LA PÁGINA -->
+      <div *ngIf="cliente">
+        <h1>Datos del Cliente</h1>
+        <p><strong>Razón Social:</strong> {{ cliente.persona.razon_social }}</p>
+        <p><strong>Documento:</strong> {{ cliente.persona.numero_documento }}</p>
+    
+        <h2>Ventas de Pasajes</h2>
+        <ion-list>
+          <ion-item *ngFor="let venta of cliente.ventas_pasajes">
+            <ion-label>
+              Viaje ID: {{ venta.id_viaje }} - Costo: {{ venta.costo }}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+    
+        <h2>Encomiendas como Remitente</h2>
+        <ion-list>
+          <ion-item *ngFor="let encomienda of cliente.encomiendas_remitente">
+            <ion-label>
+              Viaje ID: {{ encomienda.id_viaje }} - Estado: {{ encomienda.estado_envio }}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+    
+        <h2>Encomiendas como Destinatario</h2>
+        <ion-list>
+          <ion-item *ngFor="let encomienda of cliente.encomiendas_destinatario">
+            <ion-label>
+              Viaje ID: {{ encomienda.id_viaje }} - Estado: {{ encomienda.estado_envio }}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
     </div>
   </div>
 
