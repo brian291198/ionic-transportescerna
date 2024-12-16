@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <div class="bg-darkRed h-screen flex flex-col items-center justify-between">
+    <!-- Componente header2 reutilizado -->
+    <div class="w-full">
+      <app-header2></app-header2>
+    </div>
+
+    <!-- Parte superior -->
+    <div class="text-start px-10 w-full flex items-center relative">
+      <!-- Título principal -->
+      <div class="w-full text-center">
+        <h2 class="text-2xl font-bold text-pureWhite">Ubícanos</h2>
+      </div>
+      <!-- Botón regresar -->
+      <div class="w-full px-6 absolute top-1 left-0">
+        <button type="button" [routerLink]="['/welcome']">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Parte inferior -->
+    <div class="bg-white rounded-tl-3xl rounded-tr-3xl shadow-lg w-full h-3/4 px-10 py-6 overflow-y-auto">
+      <!-- Card principal -->
+      <div class="bg-gray-100 rounded-xl shadow-md p-6 h-full">
+        <!-- Contenedor principal con flexbox -->
+        <div class="flex flex-col md:flex-row items-stretch md:space-x-6 h-full">
+          <!-- Google Maps -->
+          <div class="w-full md:w-1/2 h-full">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.369197804428!2d-79.02161462567057!3d-8.115920282561504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3cdec0fd807d%3A0x204010bba423843e!2sAv.%20Cesar%20Vallejo%201786%2C%20Trujillo%2013003%2C%20Per%C3%BA!5e0!3m2!1ses!2sus!4v1700000000000!5m2!1ses!2sus" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <!-- Información de contacto -->
+          <div class="w-full md:w-1/2 flex flex-col justify-center h-full" style="margin-left: 50px;">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Información de Contacto</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li><strong>Dirección:</strong> Av. César Vallejo 1786, Trujillo 13006</li>
+              <li><strong>Teléfono:</strong> 943 772 714</li>
+              <li><strong>Horario: Todos los días</strong> 
+                <br>12–7:30 a.m. 
+                <br>8 a.m.–12 a.m.
+              </li>
+              <li><strong>Email:</strong> cernasrl&#64;gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

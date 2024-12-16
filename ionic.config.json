@@ -1,0 +1,7 @@
+{
+  "name": "cernaAppMobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

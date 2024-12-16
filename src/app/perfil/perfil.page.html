@@ -1,0 +1,77 @@
+<ion-content [fullscreen]="true">
+
+  <div class="bg-darkRed h-screen flex flex-col items-center justify-between">
+
+    <!-- Componente header2 reutilizado -->
+    <div class="w-full">
+      <app-header2></app-header2>
+    </div>
+
+    <!-- Parte superior -->
+    <div class="text-start px-10 w-full flex items-center relative">
+      <!-- Título principal -->
+      <div class="w-full text-center">
+        <h2 class="text-2xl font-bold text-pureWhite">Perfil</h2>
+      </div>
+      <!-- Botón regresar -->
+      <div class="w-full px-6 absolute top-1 left-0">
+        <button type="button" [routerLink]="['/welcome']">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Parte inferior -->
+    <div class="bg-white rounded-tl-3xl rounded-tr-3xl shadow-lg w-full h-3/4 px-10 overflow-y-auto">
+
+      <!-- Card para el formulario -->
+      <ion-card class="p-6 bg-white shadow-md rounded-lg">
+        <form>
+          <!-- DNI / RUC -->
+          <ion-label class="text-white mb-2 block">DNI/RUC</ion-label>
+          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
+            <ion-icon name="id-card" slot="start" class="text-teal-500"></ion-icon>
+            <ion-input type="text" value="54672345" placeholder="DNI / RUC" readonly class="text-white placeholder-white"></ion-input>
+          </ion-item>
+
+          <!-- Email -->
+          <ion-label class="text-white mb-2 block">EMAIL</ion-label>
+          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
+            <ion-icon name="mail" slot="start" class="text-teal-500"></ion-icon>
+            <ion-input type="email" value="alejandro_g001@gmail.com" placeholder="Email" class="text-white placeholder-white"></ion-input>
+          </ion-item>
+
+          <!-- Usuario -->
+          <ion-label class="text-white mb-2 block">USUARIO</ion-label>
+          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
+            <ion-icon name="person" slot="start" class="text-teal-500"></ion-icon>
+            <ion-input type="text" value="alejandro_g001" placeholder="Usuario" class="text-white placeholder-white"></ion-input>
+          </ion-item>
+
+          <!-- Contraseña -->
+          <ion-label class="text-white mb-2 block">CONTRASEÑA</ion-label>
+          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
+            <ion-icon name="lock-closed" slot="start" class="text-teal-500"></ion-icon>
+            <ion-input type="password" value="********" placeholder="Contraseña" class="text-white placeholder-white"></ion-input>
+            <ion-icon name="eye-off" slot="end" class="text-teal-500"></ion-icon>
+          </ion-item>
+
+          <!-- Confirmar Contraseña -->
+          <ion-label class="text-white mb-2 block">CONFIRMAR CONTRASEÑA</ion-label>
+          <ion-item lines="none" class="mb-4 bg-gray-800 rounded-lg">
+            <ion-icon name="lock-closed" slot="start" class="text-teal-500"></ion-icon>
+            <ion-input type="password" value="********" placeholder="Confirmar Contraseña" class="text-white placeholder-white"></ion-input>
+            <ion-icon name="eye-off" slot="end" class="text-teal-500"></ion-icon>
+          </ion-item>
+
+          <!-- Botón Actualizar -->
+          <ion-button expand="full" color="danger" class="mt-4 rounded-lg">Actualizar</ion-button>
+        </form>
+      </ion-card>
+
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,34 @@
+
+<ion-content [fullscreen]="true">
+
+  <div class="bg-darkRed h-screen flex flex-col items-center justify-between">
+
+    <!-- Componente header2 reutilizado -->
+    <div class="w-full">
+      <app-header2></app-header2>
+    </div>
+
+    <!-- Parte superior -->
+    <div class="text-start px-10 w-full flex items-center relative">
+      <!-- Título principal -->
+      <div class="w-full text-center">
+        <h2 class="text-2xl font-bold text-pureWhite">Historial del Cliente</h2>
+      </div>
+      <!-- Botón regresar -->
+      <div class="w-full px-6 absolute top-1 left-0">
+        <button type="button" [routerLink]="['/welcome']">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Parte inferior -->
+    <div class="bg-white rounded-tl-3xl rounded-tr-3xl shadow-lg w-full h-3/4 px-10 overflow-y-auto">
+      
+     <!-- AQUÍ EL CONTENIDO DE LA PÁGINA -->
+    </div>
+  </div>
+
+</ion-content>

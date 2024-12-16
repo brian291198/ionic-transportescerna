@@ -1,0 +1,65 @@
+
+<ion-content [fullscreen]="true">
+
+  <div class="bg-darkRed h-screen flex flex-col items-center justify-between">
+
+    <!-- Componente header2 reutilizado -->
+    <div class="w-full">
+      <app-header2></app-header2>
+    </div>
+
+    <!-- Parte superior -->
+    <div class="text-start px-10 w-full flex items-center relative">
+      <!-- Título principal -->
+      <div class="w-full text-center">
+        <h2 class="text-2xl font-bold text-pureWhite">Preguntas frecuentes</h2>
+      </div>
+      <!-- Botón regresar -->
+      <div class="w-full px-6 absolute top-1 left-0">
+        <button type="button" [routerLink]="['/welcome']">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Parte inferior -->
+    <div class="bg-white rounded-tl-3xl rounded-tr-3xl shadow-lg w-full h-3/4 px-10 overflow-y-auto">
+      <br><br>
+     <!-- AQUÍ EL CONTENIDO DE LA PÁGINA -->
+      <div class="space-y-4">
+        <!-- Pregunta 1 -->
+        <div class="bg-gray-100 rounded-xl shadow-md p-4">
+          <h3 class="text-lg font-semibold text-gray-800">¿Cómo puedo actualizar mi información?</h3>
+          <p class="text-gray-700">Deberás dirigirte a la sección "Mi Perfil", en ella visualizarás tu datos que podrán ser modificados</p>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="bg-gray-100 rounded-xl shadow-md p-4">
+          <h3 class="text-lg font-semibold text-gray-800">¿Cuáles son los métodos de pago disponibles?</h3>
+          <p class="text-gray-700">Aceptamos pagos con tarjetas de crédito, débito, y transferencias bancarias</p>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="bg-gray-100 rounded-xl shadow-md p-4">
+          <h3 class="text-lg font-semibold text-gray-800">¿Cómo rastreo el estado de mi encomienda?</h3>
+          <p class="text-gray-700">Una vez realizado el pago de costo de envio, en la landing de la página web deberás registrar el número de envio y el dni de la persona que realizó la encomienda, posteriormente se mostrará el estado de la encomienda</p>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="bg-gray-100 rounded-xl shadow-md p-4">
+          <h3 class="text-lg font-semibold text-gray-800">¿Realizan encomiendan internacionales?</h3>
+          <p class="text-gray-700">No, solo realizamos encomeindas a nivel nacional. Los costos de encomienda varían según el destino y el peso del paquete.</p>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="bg-gray-100 rounded-xl shadow-md p-4">
+          <h3 class="text-lg font-semibold text-gray-800">¿Cuál es el horario de atención al cliente?</h3>
+          <p class="text-gray-700">Nuestro horario de atención es de lunes a domingo, de 12-7:30am y 8 am-12:00am. Puedes contactarnos por correo electrónico o teléfono durante ese horario.</p>
+        </div><br>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

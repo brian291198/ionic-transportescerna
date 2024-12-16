@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+
+  
+ <!-- Contenido principal -->
+ <div class="px-6 bg-white h-full">
+  <app-header1></app-header1>
+  
+   <!-- Mensaje de bienvenida -->
+
+   <div class="bg-darkRed w-full h-30 p-5 text-justify rounded-lg">
+     <p class="text-white">Bienvenido Alejandro, ahora puedes dar seguimiento a tus envíos y pasajes de viaje.</p>
+   </div>
+
+   <!-- Opciones del aplicativo -->
+
+   <ion-grid style="padding: 0 !important;" class="mt-10">
+     <ion-row>
+       <ion-col size-sm="6" size-md="3">
+         <div class="border border-darkRed text-darkRed w-50 aspect-[1/1] p-5 text-justify rounded-lg">
+           <p>Seguimiento de Envíos.</p>
+         </div>
+       </ion-col>
+   
+       <ion-col size-sm="6" size-md="3" >
+         <div class="border border-darkRed text-darkRed w-50 aspect-[1/1] p-5 text-justify rounded-lg">
+           <p>Cotizar envío.</p>
+         </div>
+       </ion-col>
+
+       <ion-col size-sm="6" size-md="3" >
+         <div class="border border-darkRed text-darkRed w-50 aspect-[1/1] p-5 text-justify rounded-lg">
+           <p>Ubícanos.</p>
+         </div>
+       </ion-col>
+   
+       <ion-col size-sm="6" size-md="3" >
+         <div [routerLink]="['/history']"  class="border border-darkRed text-darkRed w-50 aspect-[1/1] p-5 text-justify rounded-lg">
+           <p>Mi Historial.</p>
+         </div>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+
+ </div>
+</ion-content>
+
